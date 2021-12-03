@@ -1,5 +1,4 @@
-def first(input):
-    lines = [int(x) for x in f.readlines()]
+def first(lines):
     incs = 0
     for i in range(1, len(lines)):
         if lines[i] > lines[i - 1]:
@@ -7,8 +6,7 @@ def first(input):
     return incs
 
 
-def second(input):
-    lines = [int(x) for x in f.readlines()]
+def second(lines):
     incs = 0
     last = max(lines)
     for i in range(len(lines) - 2):
@@ -23,7 +21,6 @@ def second(input):
 
 
 with open("input.txt") as f:
-    print(first(f))
-
-with open("input.txt") as f:
-    print(second(f))
+    lines = [int(x) for x in f.readlines()]
+    print(first(lines))
+    print(second(lines))
